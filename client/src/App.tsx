@@ -1,21 +1,24 @@
 import React from 'react';
 import './App.css';
+import SimpleRegister from './Simple/SimpleRegistery';
+import SimpleLogin from './Simple/SimpeLogin';
+import ProtectedLogin from './Protected/ProtectedLogin';
+import ProtectedRegister from './Protected/ProtectedRegistery';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="auth-container">
+          <div>
+            <SimpleLogin />
+            <SimpleRegister />
+          </div>
+          <div>
+            <ProtectedLogin />
+            <ProtectedRegister />
+          </div>
+        </div>
       </header>
     </div>
   );

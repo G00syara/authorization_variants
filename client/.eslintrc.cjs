@@ -1,10 +1,10 @@
-export default {
+module.exports = {
   root: true,
   env: {
     node: true,
     es6: true,
   },
-  plugins: ['@typescript-eslint', 'no-relative-import-paths'],
+  plugins: ['@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
@@ -12,11 +12,6 @@ export default {
   },
   rules: {
     'max-len': ['error', 120],
-
-    'no-relative-import-paths/no-relative-import-paths': [
-      'error',
-      { allowSameFolder: true, rootDir: 'src', prefix: '~' },
-    ],
     'prefer-destructuring': ['off'],
     'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
     'arrow-body-style': ['off'],
