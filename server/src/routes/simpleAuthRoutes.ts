@@ -1,4 +1,5 @@
 import Router from 'koa-router';
+
 import * as simpleAuthController from '../controllers/simpleAuthController';
 
 const router = new Router();

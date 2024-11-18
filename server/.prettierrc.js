@@ -1,7 +1,4 @@
-/**
- * @NOTE Turn on "Run on save for files:" under Settings > Languages & Frameworks > JavaScript > Prettier. Make sure that .ts and .vue are included.
- */
-export default {
+module.exports = {
   printWidth: 120,
   tabWidth: 2,
   useTabs: false,

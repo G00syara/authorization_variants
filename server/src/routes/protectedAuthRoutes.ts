@@ -1,4 +1,5 @@
 import Router from 'koa-router';
+
 import * as ProtectedAuthController from '../controllers/protectedAuthController';
 
 const router = new Router();

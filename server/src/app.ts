@@ -1,10 +1,11 @@
+import cors from '@koa/cors';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import json from 'koa-json';
 import logger from 'koa-logger';
-import cors from '@koa/cors';
-import simpleAuthRoutes from './routes/simpleAuthRoutes';
+
 import protectedAuthRoutes from './routes/protectedAuthRoutes';
+import simpleAuthRoutes from './routes/simpleAuthRoutes';
 
 const app = new Koa();
 

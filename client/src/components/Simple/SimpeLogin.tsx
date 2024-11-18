@@ -1,4 +1,5 @@
 import React from 'react';
+
 import useBaseForm from '../../hooks/useBaseForm';
 
 const SimpleLogin: React.FC = () => {

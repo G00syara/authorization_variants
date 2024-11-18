@@ -1,6 +1,7 @@
-import { Context } from 'koa';
 import jwt from 'jsonwebtoken';
-import {SimpleAuthService} from '../services/simpleAuthService';
+import { Context } from 'koa';
+
+import { SimpleAuthService } from '../services/simpleAuthService';
 
 const SECRET_KEY = 'your_secret_key';
 

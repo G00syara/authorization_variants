@@ -12,7 +12,7 @@ const User = sequelize.define<UserInstance>('User', {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true, 
+    unique: true,
   },
   password: {
     type: DataTypes.STRING,
@@ -24,16 +24,16 @@ const ProtectedUser = sequelize.define<UserInstance>('ProtectedUser', {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true, 
+    unique: true,
   },
   password: {
     type: DataTypes.STRING,
-    allowNull: false, 
+    allowNull: false,
   },
 });
 
-
-sequelize.sync()
+sequelize
+  .sync()
   .then(() => {
     console.log('База данных синхронизирована, таблица User создана');
   })

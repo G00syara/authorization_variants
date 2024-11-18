@@ -1,6 +1,7 @@
-import { Context } from 'koa';
 import jwt from 'jsonwebtoken';
-import {ProtectedAuthService} from '../services/protectedAuthService';
+import { Context } from 'koa';
+
+import { ProtectedAuthService } from '../services/protectedAuthService';
 
 const SECRET_KEY = 'your_secret_key';
 
