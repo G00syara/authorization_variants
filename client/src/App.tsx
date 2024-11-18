@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import SimpleRegister from './Simple/SimpleRegistery';
-import SimpleLogin from './Simple/SimpeLogin';
-import ProtectedLogin from './Protected/ProtectedLogin';
-import ProtectedRegister from './Protected/ProtectedRegistery';
+import SimpleRegister from './components/Simple/SimpleRegistery';
+import SimpleLogin from './components/Simple/SimpeLogin';
+import ProtectedLogin from './components/Protected/ProtectedLogin';
+import ProtectedRegister from './components/Protected/ProtectedRegistery';
 
 function App() {
   return (
