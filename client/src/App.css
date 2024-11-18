@@ -12,10 +12,6 @@
 }
 
 .auth-container {
-  display: flex;
-  margin: 15px;
-  flex-direction: row;
-  align-items: flex-start;
   padding: 20px;
   background-color: #3c4043;
   border-radius: 10px;

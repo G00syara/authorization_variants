@@ -35,12 +35,14 @@ const useBaseForm = (title: string, url: string, isLogin:boolean): React.FC => {
         <form onSubmit={(e) => handleSubmit(e, url, username, password, isLogin)}
         >
           <input
+            className='p-0.5 m-2 text-black	'
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
+            className='p-0.5 m-2 text-black	'
             type="password"
             placeholder="Password"
             value={password}
