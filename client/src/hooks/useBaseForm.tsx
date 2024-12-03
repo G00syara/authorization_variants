@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const handleSubmit = async (
   e: React.FormEvent<HTMLFormElement>,
   url: string,
@@ -11,10 +13,14 @@ const handleSubmit = async (
   e.preventDefault();
 
   try {
-    const response = await axios.post(`http://localhost:4001/${url}`, {
-      username,
-      password,
-    });
+    const response = await axios.post(
+      `${backendUrl}${url}`,
+      {
+        username,
+        password,
+      },
+      { withCredentials: true },
+    );
     alert(`${isLogin ? 'Login' : 'Register'} successful!`);
     console.info(response.data);
   } catch (error) {

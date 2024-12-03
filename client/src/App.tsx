@@ -1,6 +1,9 @@
 import React from 'react';
 
 import './App.css';
+import JWTCheck from './components/JWT/JWTCheck';
+import JWTLogin from './components/JWT/JWTLogin';
+import JWTRegister from './components/JWT/JWTRegistery';
 import ProtectedLogin from './components/Protected/ProtectedLogin';
 import ProtectedRegister from './components/Protected/ProtectedRegistery';
 import SimpleLogin from './components/Simple/SimpeLogin';
@@ -18,6 +21,11 @@ function App() {
           <div className="auth-container m-6">
             <ProtectedLogin />
             <ProtectedRegister />
+          </div>
+          <div className="auth-container m-6">
+            <JWTLogin />
+            <JWTRegister />
+            <JWTCheck />
           </div>
         </div>
       </header>

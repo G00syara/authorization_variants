@@ -32,6 +32,18 @@ const ProtectedUser = sequelize.define<UserInstance>('ProtectedUser', {
   },
 });
 
+const JWTUser = sequelize.define<UserInstance>('JWTUser', {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
 sequelize
   .sync()
   .then(() => {
@@ -41,4 +53,4 @@ sequelize
     console.error('Ошибка при синхронизации базы данных:', error);
   });
 
-export { sequelize, User, ProtectedUser };
+export { sequelize, User, ProtectedUser, JWTUser };
