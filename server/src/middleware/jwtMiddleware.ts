@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { Context, Next } from 'koa';
 
 dotenv.config();
-const SECRET_KEY = process.env.JWT_SECRET || 'default_secret_key';
+const SECRET_KEY = process.env.SECRET_KEY || 'default_secret_key';
 
 export const jwtMiddleware = async (ctx: Context, next: Next) => {
   const token = ctx.cookies.get('jwt_token') || ctx.headers['authorization']?.split(' ')[1];

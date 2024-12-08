@@ -1,6 +1,9 @@
 import React from 'react';
 
 import './App.css';
+import FullJwtCheck from './components/FullJwt/FullJwtCheck';
+import FullJwtLogin from './components/FullJwt/FullJwtLogin';
+import FullJwtRegister from './components/FullJwt/FullJwtRegistery';
 import JWTCheck from './components/JWT/JWTCheck';
 import JWTLogin from './components/JWT/JWTLogin';
 import JWTRegister from './components/JWT/JWTRegistery';
@@ -26,6 +29,11 @@ function App() {
             <JWTLogin />
             <JWTRegister />
             <JWTCheck />
+          </div>
+          <div className="auth-container m-6">
+            <FullJwtLogin />
+            <FullJwtRegister />
+            <FullJwtCheck />
           </div>
         </div>
       </header>

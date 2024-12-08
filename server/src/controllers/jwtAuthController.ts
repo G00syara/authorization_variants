@@ -5,7 +5,7 @@ import { Context } from 'koa';
 import { JWTAuthService } from '../services/jwtAuthService';
 
 dotenv.config();
-const SECRET_KEY = process.env.JWT_SECRET || 'default_secret_key';
+const SECRET_KEY = process.env.SECRET_KEY || 'default_secret_key';
 
 export const register = async (ctx: Context) => {
   const { username, password } = ctx.request.body as any;
