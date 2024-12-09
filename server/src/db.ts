@@ -60,6 +60,18 @@ const FullJwtUser = sequelize.define<UserInstance & { refreshToken: string | nul
   },
 });
 
+const CSRFUser = sequelize.define<UserInstance>('CSRFUser', {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
 sequelize
   .sync()
   .then(() => {
@@ -69,4 +81,4 @@ sequelize
     console.error('Ошибка при синхронизации базы данных:', error);
   });
 
-export { sequelize, User, ProtectedUser, JWTUser, FullJwtUser };
+export { sequelize, User, ProtectedUser, JWTUser, FullJwtUser, CSRFUser };

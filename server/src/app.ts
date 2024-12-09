@@ -5,6 +5,7 @@ import cookie from 'koa-cookie';
 import json from 'koa-json';
 import logger from 'koa-logger';
 
+import csrfAuthRoutes from './routes/csrfAuthRoutes';
 import fullJwtAuthRoutes from './routes/fullJwtAuthRoutes';
 import jwtAuthRoutes from './routes/jwtAuthRoutes';
 import protectedAuthRoutes from './routes/protectedAuthRoutes';
@@ -27,5 +28,6 @@ app.use(simpleAuthRoutes.routes()).use(simpleAuthRoutes.allowedMethods());
 app.use(protectedAuthRoutes.routes()).use(protectedAuthRoutes.allowedMethods());
 app.use(jwtAuthRoutes.routes()).use(jwtAuthRoutes.allowedMethods());
 app.use(fullJwtAuthRoutes.routes()).use(fullJwtAuthRoutes.allowedMethods());
+app.use(csrfAuthRoutes.routes()).use(csrfAuthRoutes.allowedMethods());
 
 export default app;

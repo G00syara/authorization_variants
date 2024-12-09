@@ -1,6 +1,9 @@
 import React from 'react';
 
 import './App.css';
+import CSRFLogin from './components/CSRF/CSRFLogin';
+import CSRFRegister from './components/CSRF/CSRFRegistery';
+import CSRFToken from './components/CSRF/CSRFToken';
 import FullJwtCheck from './components/FullJwt/FullJwtCheck';
 import FullJwtLogin from './components/FullJwt/FullJwtLogin';
 import FullJwtRegister from './components/FullJwt/FullJwtRegistery';
@@ -34,6 +37,11 @@ function App() {
             <FullJwtLogin />
             <FullJwtRegister />
             <FullJwtCheck />
+          </div>
+          <div className="auth-container m-6">
+            <CSRFLogin />
+            <CSRFRegister />
+            <CSRFToken />
           </div>
         </div>
       </header>

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import React, { useState } from 'react';
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
@@ -9,8 +10,11 @@ const handleSubmit = async (
   username: string,
   password: string,
   isLogin: boolean,
+  withCSRF?: boolean,
 ) => {
   e.preventDefault();
+
+  const csrfToken = Cookies.get('csrfToken') || '';
 
   try {
     const response = await axios.post(
@@ -18,6 +22,7 @@ const handleSubmit = async (
       {
         username,
         password,
+        ...(withCSRF && { csrfToken }),
       },
       { withCredentials: true },
     );
@@ -28,7 +33,7 @@ const handleSubmit = async (
   }
 };
 
-const useBaseForm = (title: string, url: string, isLogin: boolean): React.FC => {
+const useBaseForm = (title: string, url: string, isLogin: boolean, withCSRF?: boolean): React.FC => {
   const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -36,7 +41,7 @@ const useBaseForm = (title: string, url: string, isLogin: boolean): React.FC => 
     return (
       <div>
         <h2>{title}</h2>
-        <form onSubmit={(e) => handleSubmit(e, url, username, password, isLogin)}>
+        <form onSubmit={(e) => handleSubmit(e, url, username, password, isLogin, withCSRF)}>
           <input
             className="p-0.5 m-2 text-black	"
             type="text"

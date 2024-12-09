@@ -8,6 +8,7 @@
   "dependencies": {
     "@koa/cors": "^5.0.0",
     "bcrypt": "^5.1.1",
+    "csrf": "^3.1.0",
     "dotenv": "^16.4.6",
     "jsonwebtoken": "^9.0.2",
     "koa": "^2.15.3",
