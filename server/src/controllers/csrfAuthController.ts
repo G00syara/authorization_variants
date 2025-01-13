@@ -20,8 +20,6 @@ export const register = async (ctx: Context) => {
 
   const csrfToken = ctx.cookies.get('csrfToken');
 
-  console.log('csrfToken', csrfToken);
-
   const isValid = csrfProtection.verify(CSRF_SECRET_KEY, csrfToken || '');
   if (!isValid && csrfToken) {
     ctx.status = 403;
