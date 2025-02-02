@@ -11,7 +11,6 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
-    'max-len': ['error', 120],
     'prefer-destructuring': ['off'],
     'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
     'arrow-body-style': ['off'],

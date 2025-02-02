@@ -7,6 +7,7 @@ import CSRFToken from './components/CSRF/CSRFToken';
 import FullJwtCheck from './components/FullJwt/FullJwtCheck';
 import FullJwtLogin from './components/FullJwt/FullJwtLogin';
 import FullJwtRegister from './components/FullJwt/FullJwtRegistery';
+import GithubAuth from './components/Github/GithubAuth';
 import GmailAuth from './components/Gmail/GmailAuth';
 import JWTCheck from './components/JWT/JWTCheck';
 import JWTLogin from './components/JWT/JWTLogin';
@@ -51,6 +52,9 @@ function App() {
             </div>
             <div className="auth-container w-full space-y-4">
               <GmailAuth />
+            </div>
+            <div className="auth-container w-full space-y-4">
+              <GithubAuth />
             </div>
           </div>
         </div>
