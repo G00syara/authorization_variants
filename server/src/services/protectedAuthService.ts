@@ -1,8 +1,11 @@
 import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
 
 import { ProtectedUser } from '../db';
 
-const SALT_ROUNDS = 10;
+dotenv.config();
+
+const SALT_ROUNDS = process.env.SALT_ROUNDS!;
 
 export namespace ProtectedAuthService {
   export const register = async (username: string, password: string) => {

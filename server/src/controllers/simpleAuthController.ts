@@ -1,9 +1,6 @@
-import jwt from 'jsonwebtoken';
 import { Context } from 'koa';
 
 import { SimpleAuthService } from '../services/simpleAuthService';
-
-const SECRET_KEY = 'your_secret_key';
 
 export const register = async (ctx: Context) => {
   const { username, password } = ctx.request.body as any;
@@ -34,6 +31,5 @@ export const login = async (ctx: Context) => {
     return;
   }
 
-  const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
-  ctx.body = { message: 'Login successful', token };
+  ctx.body = { message: 'Login successful' };
 };
