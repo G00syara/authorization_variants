@@ -8,6 +8,18 @@ interface UserInstance extends Model {
   password: string;
 }
 
+interface WebAuthInstance extends Model {
+  id: number;
+  username: string;
+  credentialID: string;
+  credentialPublicKey: Buffer;
+  counter: string;
+  credentialDeviceType: string;
+  credentialBackedUp: string;
+  transport: string;
+  email: string;
+}
+
 const User = sequelize.define<UserInstance>('User', {
   username: {
     type: DataTypes.STRING,
@@ -72,6 +84,42 @@ const CSRFUser = sequelize.define<UserInstance>('CSRFUser', {
   },
 });
 
+const WebAuth = sequelize.define<WebAuthInstance>('WebAuth', {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    unique: true,
+  },
+  credentialID: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  credentialPublicKey: {
+    type: DataTypes.BLOB,
+    allowNull: true,
+  },
+  counter: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  credentialDeviceType: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  credentialBackedUp: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  transport: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+});
+
 sequelize
   .sync()
   .then(() => {
@@ -81,4 +129,4 @@ sequelize
     console.error('Ошибка при синхронизации базы данных:', error);
   });
 
-export { sequelize, User, ProtectedUser, JWTUser, FullJwtUser, CSRFUser };
+export { sequelize, User, ProtectedUser, JWTUser, FullJwtUser, CSRFUser, WebAuth };

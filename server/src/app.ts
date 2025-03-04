@@ -10,6 +10,7 @@ import fullJwtAuthRoutes from './routes/fullJwtAuthRoutes';
 import jwtAuthRoutes from './routes/jwtAuthRoutes';
 import protectedAuthRoutes from './routes/protectedAuthRoutes';
 import simpleAuthRoutes from './routes/simpleAuthRoutes';
+import webAuthRoutes from './routes/webAuthRoutes';
 
 const app = new Koa();
 
@@ -29,5 +30,6 @@ app.use(protectedAuthRoutes.routes()).use(protectedAuthRoutes.allowedMethods());
 app.use(jwtAuthRoutes.routes()).use(jwtAuthRoutes.allowedMethods());
 app.use(fullJwtAuthRoutes.routes()).use(fullJwtAuthRoutes.allowedMethods());
 app.use(csrfAuthRoutes.routes()).use(csrfAuthRoutes.allowedMethods());
+app.use(webAuthRoutes.routes()).use(webAuthRoutes.allowedMethods());
 
 export default app;

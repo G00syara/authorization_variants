@@ -16,6 +16,7 @@ import ProtectedLogin from './components/Protected/ProtectedLogin';
 import ProtectedRegister from './components/Protected/ProtectedRegistery';
 import SimpleLogin from './components/Simple/SimpeLogin';
 import SimpleRegister from './components/Simple/SimpleRegistery';
+import WebAuthLogin from './components/WebAuth/WebAuthLogin';
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
             </div>
             <div className="auth-container w-full space-y-4">
               <GithubAuth />
+            </div>
+            <div className="auth-container w-full space-y-4">
+              <WebAuthLogin />
             </div>
           </div>
         </div>
