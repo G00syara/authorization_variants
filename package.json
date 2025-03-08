@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "git-cliff": "^2.8.0"
+  }
+}
